@@ -1,16 +1,16 @@
-class LinkList {
+class BadLinkList {
   data: number;
-  next: LinkList;
+  next: BadLinkList;
   constructor(data: number) {
     this.data = data;
   }
 }
 function main() {
-  const nodeA = new LinkList(4);
-  const nodeB = new LinkList(2);
-  const nodeC = new LinkList(3);
-  const nodeD = new LinkList(10);
-  const nodeE = new LinkList(2);
+  const nodeA = new BadLinkList(4);
+  const nodeB = new BadLinkList(2);
+  const nodeC = new BadLinkList(3);
+  const nodeD = new BadLinkList(10);
+  const nodeE = new BadLinkList(2);
 
   nodeA.next = nodeB;
   nodeB.next = nodeC;
@@ -20,7 +20,7 @@ function main() {
 }
 main();
 
-function linkListCountr(orginal: LinkList) {
+function linkListCountr(orginal: BadLinkList) {
   let counter = 1;
   let head = orginal;
   while (head.next != null) {
