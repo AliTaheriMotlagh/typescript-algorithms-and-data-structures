@@ -23,6 +23,20 @@ class LinkList {
     return this.size === 0;
   }
 
+  reverse() {
+    let previous: NodeLinkList = null,
+      current = this.head,
+      next = this.head.next;
+    while (next) {
+      current.next = previous;
+      previous = current;
+      current = next;
+      next = next.next;
+    }
+    current.next = previous;
+    this.head = current;
+  }
+
   removeFrom(index: number) {
     if (this.isEmpty() || index >= this.size || index < 0) {
       return null;
@@ -152,32 +166,12 @@ class LinkList {
 }
 
 const b = new LinkList();
-b.append(9);
-b.removeFrom(0);
-b.append(11);
-b.append(11);
-b.append(11);
-b.append(-1);
-b.append(501);
-b.print();
-b.insert(4, 1);
-b.print();
-b.removeFrom(5);
-b.print();
-b.append(11);
-b.append(-1);
-b.print();
-b.removeValue(4);
-b.print();
-b.insert(2, 0);
-b.removeValue(11);
-b.print();
-b.removeValue(2);
-b.print();
-console.log(b.removeValue(1487));
-b.print();
 
-console.log(b.getSize());
-
-console.log(b.search(-1));
-console.log(b.search(300));
+b.append(10);
+b.append(20);
+b.append(30);
+b.print();
+b.reverse();
+b.print();
+b.reverse();
+b.print();
