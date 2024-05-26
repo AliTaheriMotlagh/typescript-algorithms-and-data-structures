@@ -1,6 +1,6 @@
 // Queue Implementation Optimised
-class Queue {
-  items: any[];
+export class Queue<T> {
+  items: T[];
   front: number;
   rear: number;
   constructor() {
@@ -9,7 +9,7 @@ class Queue {
     this.rear = 0;
   }
 
-  enQueue(item: any) {
+  enQueue(item: T) {
     this.items[this.rear] = item;
     this.rear++;
   }
